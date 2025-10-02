@@ -1,59 +1,78 @@
-# MongoDB Fundamentals - Week 1
+📚 PLP Bookstore (MongoDB Assignment)
 
-## Setup Instructions
+📌 Overview
+This project is a MongoDB database implementation for a simple bookstore system.  
+It demonstrates skills in:
+- Database creation and collection setup
+- CRUD operations
+- Advanced queries with filtering, projection, sorting, and pagination
+- Aggregation pipelines for data analysis
+- Indexing for performance optimization
 
-Before you begin this assignment, please make sure you have the following installed:
+⚙️ Setup Instructions
+1. Install MongoDB
+- Download and install MongoDB Community Edition:  
+  [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
+- Install MongoDB Compass(GUI) for easier database management.
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+2. Start MongoDB
+- Start MongoDB service (runs at `mongodb://127.0.0.1:27017` by default).
+- Open **MongoDB Compass** or **mongosh**.
 
-### Node.js Package Setup
+3. Create Database & Collection
+In `mongosh`:
+```js
+use plp_bookstore
+db.createCollection("books")
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+4. Insert Sample Data
+Run script:
+mongosh < insert_books.js
+This inserts at least 10 books into the books collection.
 
-```bash
-# Initialize a package.json file
-npm init -y
+5. Run Queries
+Execute queries using:
+mongosh < queries.js
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+📂 Project Structure
+plp_bookstore/
+│── insert_books.js   # Inserts book documents into the collection
+│── queries.js        # Contains all MongoDB queries
+│── README.md         # Documentation and setup guide
+│── screenshot.png    # MongoDB Compass screenshot showing data
 
-## Assignment Overview
+📝 Tasks Implemented
+✅ Task 1: MongoDB Setup
+Database: plp_bookstore
+Collection: books
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+✅ Task 2: Basic CRUD
+Insert multiple books
+Find by genre, year, and author
+Update book price
+Delete book by title
 
-## Submission
+✅ Task 3: Advanced Queries
+Find in-stock books published after 2010
+Projection (title, author, price)
+Sorting (ascending/descending by price)
+Pagination (5 books per page)
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+✅ Task 4: Aggregation Pipelines
+Average price of books by genre
+Author with most books
+Books grouped by publication decade
 
-## Getting Started
+✅ Task 5: Indexing
+Index on title
+Compound index on author + published_year
+Used explain() to compare performance
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+📸 Screenshot
+screeshot.png
 
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+🚀 Expected Outcome
+Working plp_bookstore database with structured data
+Queries demonstrating CRUD, advanced filtering, sorting, and pagination
+Aggregation pipelines that provide insights
+Indexing implemented with performance improvements
